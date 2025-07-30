@@ -1,8 +1,21 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Body from './components/Body';
+import Login from './components/Login';
+import Profile from './components/Profile';
+
 const App = () => {
   return (
-    <div>
-      <h1 className="text-red-400">Hello </h1>
-    </div>
+    <>
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Body />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 
