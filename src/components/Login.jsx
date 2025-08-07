@@ -9,6 +9,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const [emailId, setEmailId] = useState('abinash@gmail.com');
   const [password, setPassword] = useState('Abinash@123');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -28,7 +29,8 @@ const Login = () => {
       dispatch(addUser(res.data.data));
       navigate('/');
     } catch (err) {
-      console.log('Error :' + err);
+      setError(err?.response?.data || 'Something went wrong');
+      console.error(err);
     }
   };
   return (
@@ -53,7 +55,7 @@ const Login = () => {
           className="input"
           placeholder="Password"
         />
-
+        <p className="text-red-500 text-center">{error}</p>
         <button className="btn btn-neutral mt-4" onClick={handleLogin}>
           Login
         </button>
