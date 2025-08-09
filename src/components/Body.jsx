@@ -35,7 +35,7 @@ const Body = () => {
     <div className="h-screen">
       <NavBar />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
