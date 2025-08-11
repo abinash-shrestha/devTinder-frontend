@@ -29,8 +29,10 @@ const Feed = () => {
 
   return (
     feed && (
-      <div className="mx-auto mt-10 flex items-center justify-center">
-        <UserCard user={feed[0]} />
+      <div className="min-h-screen bg-base-200 py-10">
+        <div className="mx-auto flex items-center justify-center">
+          <UserCard user={feed[0]} />
+        </div>
       </div>
     )
   );
