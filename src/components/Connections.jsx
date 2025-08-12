@@ -8,7 +8,7 @@ const Connections = () => {
   const dispatch = useDispatch();
   const connections = useSelector((store) => store.connections);
 
-  const getConnections = async () => {
+  const fetchConnections = async () => {
     try {
       const res = await axios.get(BASE_URL + '/user/connections', {
         withCredentials: true,
@@ -20,15 +20,15 @@ const Connections = () => {
   };
 
   useEffect(() => {
-    getConnections();
+    fetchConnections();
   }, []);
 
   if (!connections) return;
   if (connections.length === 0)
     return (
-      <h1 className="font-bold  text-2xl">
+      <h2 className="text-2xl font-bold font-mono mt-4 text-center">
         Currently there are no connections
-      </h1>
+      </h2>
     );
 
   return (
@@ -48,7 +48,6 @@ const Connections = () => {
               <h2 className="card-title">{firstName + ' ' + lastName}</h2>
               <p>{age + ' ' + gender}</p>
               <p>{about}</p>
-              {/* <p>{skills}</p> */}
             </div>
           </div>
         );
