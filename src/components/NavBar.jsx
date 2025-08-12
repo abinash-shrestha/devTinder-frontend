@@ -54,7 +54,14 @@ const NavBar = () => {
                 </Link>
               </li>
               <li>
-                <a className="hover:bg-base-200">Settings</a>
+                <Link to="/connections" className="hover:bg-base-200">
+                  Connections
+                </Link>
+              </li>
+              <li>
+                <Link to="/requests" className="hover:bg-base-200">
+                  Requests
+                </Link>
               </li>
               <li>
                 <a
