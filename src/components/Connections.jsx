@@ -38,7 +38,10 @@ const Connections = () => {
         const { firstName, lastName, about, age, gender, photoUrl, skills } =
           connection;
         return (
-          <div className="card card-side bg-base-300 shadow-sm w-1/3 px-4 m-4">
+          <div
+            key={connection._id}
+            className="card card-side bg-base-300 shadow-sm w-125 px-4 m-4"
+          >
             <div className="avatar flex items-center">
               <div className="ring-primary ring-offset-base-100 w-24 h-24 rounded-full ring-2 ring-offset-2">
                 <img src={photoUrl} />
@@ -46,7 +49,9 @@ const Connections = () => {
             </div>
             <div className="card-body">
               <h2 className="card-title">{firstName + ' ' + lastName}</h2>
-              <p>{age + ' ' + gender}</p>
+              <p>
+                {age}, {gender}
+              </p>
               <p>{about}</p>
             </div>
           </div>

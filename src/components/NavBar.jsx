@@ -50,7 +50,12 @@ const NavBar = () => {
               <li>
                 <Link to="/profile" className="justify-between">
                   Profile
-                  <span className="badge badge-primary badge-sm">New</span>
+                  {/* <span className="badge badge-primary badge-sm">New</span> */}
+                </Link>
+              </li>
+              <li>
+                <Link to="/changepassword" className="justify-between">
+                  Change Password
                 </Link>
               </li>
               <li>
