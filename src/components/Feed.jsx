@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 
 const Feed = () => {
   const feed = useSelector((store) => store.feed);
-  // console.log(feed);
+  console.log(feed);
   const dispatch = useDispatch();
 
   const getFeed = async () => {
-    // if (feed) return;
+    if (feed) return;
 
     try {
       const res = await axios.get(BASE_URL + '/user/feed', {
@@ -27,11 +27,19 @@ const Feed = () => {
     getFeed();
   }, []);
 
-  if (feed) return;
+  if (!feed) return;
+
+  if (feed.length <= 0) {
+    return (
+      <h2 className="text-2xl font-bold font-mono mt-4 text-center">
+        Currently there are no new users
+      </h2>
+    );
+  }
 
   return (
     feed && (
-      <div className="min-h-screen bg-base-200 py-10">
+      <div className="min-h-screen bg-base-200 py-5">
         <div className="mx-auto flex items-center justify-center">
           <UserCard user={feed[0]} />
         </div>

@@ -10,10 +10,10 @@ const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
   const [gender, setGender] = useState(user.gender);
-  const [age, setAge] = useState(user.age);
-  const [about, setAbout] = useState(user.about);
+  const [age, setAge] = useState(user.age || '');
+  const [about, setAbout] = useState(user.about || '');
   const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
-  const [skills, setSkills] = useState(user.skills);
+  const [skills, setSkills] = useState(user.skills || '');
   const [error, setError] = useState('');
   const [toast, setToast] = useState(false);
   const dispatch = useDispatch();
@@ -99,7 +99,7 @@ const EditProfile = ({ user }) => {
             <span className="label-text font-medium">Gender</span>
           </label>
           <select
-            defaultValue={gender}
+            defaultValue="Choose your gender"
             className="select select-bordered w-full"
             onChange={(e) => setGender(e.target.value)}
           >
