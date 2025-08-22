@@ -268,14 +268,14 @@ const UserCard = ({ user }) => {
           </div>
 
           {/* Additional Actions */}
-          <div className="flex justify-center space-x-4 pt-2 border-t border-gray-100">
+          {/* <div className="flex justify-center space-x-4 pt-2 border-t border-gray-100">
             <button className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">
               <Github className="w-5 h-5" />
             </button>
             <button className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">
               <ExternalLink className="w-5 h-5" />
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
